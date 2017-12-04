@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         DataService dataService = retrofit.create(DataService.class);
         Call<String> baidu = dataService.baidu("NewRecommend/Information?data=dXNlcl9pZD0wJnBhZ2U9MSZ0aW1lPTE1MTE3NjY3OTc=");
         baidu.enqueue(new Callback<String>() {
+
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 LogUtils.e(response.body().toString());
